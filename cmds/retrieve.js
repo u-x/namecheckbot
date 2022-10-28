@@ -15,6 +15,7 @@ module.exports = {
         let amt = interaction.options.getInteger('amount')
         names = []
         function validate(namepulled) {
+            let namepulled = snipes[Math.floor(Math.random() * snipes.length)]
             if (!names.find(element => element == namepulled)) {
                 names.push(namepulled)
             } else {
@@ -24,8 +25,7 @@ module.exports = {
         let snipes = JSON.parse(fs.readFileSync('./currentsnipes.json', 'utf-8'))
         if (amt > snipes.length) return interaction.reply({ content: "i dont even have that many geez", ephemeral: true })
         for (i = 0; i < amt; i++) {
-            let namepulled = snipes[Math.floor(Math.random() * snipes.length)]
-            validate(namepulled)
+            validate()
         }
 
         setTimeout(async function() {
