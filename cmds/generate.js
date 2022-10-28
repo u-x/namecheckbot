@@ -78,7 +78,6 @@ module.exports = {
                     res.setEncoding('utf8')
                     res.on('data', d => {
                       let named = JSON.parse(d)
-                      console.log(named)
                       if (named.code == 0) {
                         if (!avails.find(element => element == name)) {
                             resolve(avails.push(name))
@@ -106,7 +105,6 @@ module.exports = {
         
         setTimeout(async function() {
             if (avails.length == 0) return interaction.channel.send(`no names were found within ${amt} tries that match ur criteria.`)
-            console.log(avails)
             let reply = `${interaction.member.user} heres ur names:\n\n`
             for (g = 0; g < avails.length; g++) {
                 reply += `${avails[g]}, `
