@@ -14,7 +14,7 @@ module.exports = {
     async execute(interaction) {
         let amt = interaction.options.getInteger('amount')
         names = []
-        function validate(namepulled) {
+        function validate() {
             let namepulled = snipes[Math.floor(Math.random() * snipes.length)]
             if (!names.find(element => element == namepulled)) {
                 names.push(namepulled)
