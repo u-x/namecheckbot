@@ -11,7 +11,8 @@ module.exports = {
             .setRequired(true)
             .setMaxLength(20)
             .setMinLength(3)
-        ),
+        )
+        .setDefaultMemberPermissions('0'),
     async execute(interaction) {
         let name = interaction.options.getString('name')
         let snipes = JSON.parse(fs.readFileSync('./currentsnipes.json', 'utf-8'))
